@@ -1,0 +1,5 @@
+package org.ssh.product.action;
+
+public class ProductAction {
+
+}

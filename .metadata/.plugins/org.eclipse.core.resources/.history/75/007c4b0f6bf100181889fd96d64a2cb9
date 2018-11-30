@@ -1,0 +1,19 @@
+package com.wrf.struts.action;
+
+public class UserAction {
+	//用户名
+	private String userName;
+	//地址
+	private String address;
+	//电话
+	private String telephone;
+	//邮箱
+	private String email;
+
+	
+	
+	
+	
+	
+	
+}

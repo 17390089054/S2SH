@@ -1,0 +1,5 @@
+package com.wrf.ssh.dao;
+
+public interface UserDao {
+    public User find(String userName,String password);
+}

@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>选择控制标签示例</title>
+</head>
+<body>
+	<!-- 判断成绩的优良等级 -->
+	<s:set name="score" value="78" />
+	<s:if test="%{#score<60}">
+		您的等级为:不及格
+	</s:if>
+	<s:elseif test="%{#score>=60 && #score<70}">
+		您的等级为:及格
+	</s:elseif>
+	<s:elseif test="%{#score>=70 && #score<80}">
+		您的等级为:中
+	</s:elseif>
+	<s:elseif test="%{#score>=80 && #score<90}">
+		您的等级为:及格
+	</s:elseif>
+	
+	
+</body>
+</html>

@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1531360723711" defaultVMConnector\="">\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\n<vm id\="1531360216424" name\="eclipse-installer" path\="/home/knight/usr/eclipse-installer"/>\n<vm id\="1531360723711" name\="jdk1.8" path\="/home/knight/usr/jdk1.8"/>\n</vmType>\n</vmSettings>\n

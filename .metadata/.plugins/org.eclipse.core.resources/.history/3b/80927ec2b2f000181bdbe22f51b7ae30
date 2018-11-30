@@ -1,0 +1,44 @@
+package service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import dao.ProductDao;
+import model.Product;
+import service.ProductService;
+@Transactional
+@Service
+public class UserServiceimpl implements ProductService{
+    @Autowired
+    private ProductDao userdao;
+
+    public List<Product> findAll() {
+        // TODO Auto-generated method stub
+        return userdao.findAll();
+    }
+
+    public int insert(Product t) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    public int update(Product t, int id) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    public int delete(int id) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    public Product findById(int id) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+}

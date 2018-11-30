@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>set标签示例</title>
+</head>
+<body>
+	<s:set name="technologyName1" value="%{'Java'}"/>
+		技术方向1:<s:property value="#technologyName1"/><br/>
+	<s:set name="technologyName2" value="%{'C++'}"/>
+		技术方向2:<s:property value="#technologyName2"/>
+	<s:set name="technologyName3" value="%{'.NET'}"/>
+		技术方向3:<s:property value=""/>
+</body>
+</html>

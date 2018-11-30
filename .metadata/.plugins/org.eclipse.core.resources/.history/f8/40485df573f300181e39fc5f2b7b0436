@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>这是主页</title>
+</head>
+<body>
+	<h3>构造Map</h3>
+	<s:set></s:set>
+	
+	hello,这是主页!
+</body>
+</html>

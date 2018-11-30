@@ -1,0 +1,5 @@
+package com.wrf.ssh.dao;
+
+public class UserDao {
+
+}

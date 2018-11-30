@@ -1,0 +1,8 @@
+package dao;
+
+import common.BaseDao;
+import model.User;
+
+public interface ProductDao extends BaseDao<User>{
+
+}

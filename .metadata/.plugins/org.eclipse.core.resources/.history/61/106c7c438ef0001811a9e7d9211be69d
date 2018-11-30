@@ -1,0 +1,10 @@
+package com.wrf.ssh.dao;
+
+import com.wrf.ssh.entity.User;
+
+@Repository
+public class UserDaompl implements UserDao{
+    public User find(String userName,String password){
+        return new User();//假数据，后期要通过Hibernate去数据库取
+    }
+}

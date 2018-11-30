@@ -1,0 +1,12 @@
+package com.wrf.ssh.serviceImpl;
+
+import org.springframework.stereotype.Service;
+
+import com.wrf.ssh.service.LoginService;
+
+@Service
+public class LoginServiceImpl implements LoginService{
+    public int login(String userName,String password){
+        return 1;
+    }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="/home/knight/usr/jdk1.8" version="1.8.0_171">
+<bootpath>
+<entry path="/home/knight/usr/jdk1.8/jre/lib/resources.jar"/>
+<entry path="/home/knight/usr/jdk1.8/jre/lib/rt.jar"/>
+<entry path="/home/knight/usr/jdk1.8/jre/lib/sunrsasign.jar"/>
+<entry path="/home/knight/usr/jdk1.8/jre/lib/jsse.jar"/>
+<entry path="/home/knight/usr/jdk1.8/jre/lib/jce.jar"/>
+<entry path="/home/knight/usr/jdk1.8/jre/lib/charsets.jar"/>
+<entry path="/home/knight/usr/jdk1.8/jre/lib/jfr.jar"/>
+<entry path="/home/knight/usr/jdk1.8/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/home/knight/usr/jdk1.8/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/home/knight/usr/jdk1.8/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/home/knight/usr/eclipse-installer" version="1.8.0_171">
+<bootpath>
+<entry path="/home/knight/usr/eclipse-installer/jre/lib/resources.jar"/>
+<entry path="/home/knight/usr/eclipse-installer/jre/lib/rt.jar"/>
+<entry path="/home/knight/usr/eclipse-installer/jre/lib/sunrsasign.jar"/>
+<entry path="/home/knight/usr/eclipse-installer/jre/lib/jsse.jar"/>
+<entry path="/home/knight/usr/eclipse-installer/jre/lib/jce.jar"/>
+<entry path="/home/knight/usr/eclipse-installer/jre/lib/charsets.jar"/>
+<entry path="/home/knight/usr/eclipse-installer/jre/lib/jfr.jar"/>
+<entry path="/home/knight/usr/eclipse-installer/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/home/knight/usr/eclipse-installer/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/home/knight/usr/eclipse-installer/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

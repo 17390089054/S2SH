@@ -1,0 +1,8 @@
+package com.wrf.ssh.serviceImpl;
+
+@Service
+public class LoginServiceImpl implements LoginService{
+    public int login(String userName,String password){
+        return 1;
+    }
+}

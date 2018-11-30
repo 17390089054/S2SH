@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+ "http://struts.apache.org/dtds/struts-2.3.dtd">
+ <struts>
+ 	<!-- 指定struts2处于开发阶段 可以调试 -->
+ 	<constant name="struts.devMode" value="true"/>
+ 	<!-- 动态方法调用 DMI -->
+ 	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+ 	
+ 	<!-- Struts2的Action 都必须配置在package里,此处使用默认package -->
+ 	<package name="default" namespace="/admin" extends="struts-default">
+ 		<!-- 定义一个user的Action 实现类为 com.wrf.struts.action.UserAction -->
+ 		<action name="user" class="com.wrf.struts.action.UserAction">
+ 			<!-- 配置execute()方法返回值与视图资源之间的映射关系 -->
+ 			<result name="success">/result.jsp</result>
+ 			<result name="error">/error.jsp</result>
+ 		</action>
+ 	</package>
+ 	
+ 	<package name="add" extends="struts-default">
+ 		<action name="add" class="com.wrf.struts.action.AddAction">
+ 			<result name="add">/add.jsp</result>
+ 		</action>
+ 	</package>
+ 	
+ 	
+ 	<!-- 自定义一个名为mypackage的包,该包继承struts-default -->
+ 	<package name="login" namespace="/" extends="struts-default" >
+ 		<!-- mypackage包下的所有Action都属于/admin的命名空间 -->
+ 		<action name="login" class="com.wrf.struts.action.LoginAction">
+ 			<!-- <result name="error">/error.jsp</result>
+ 			<result name="ok">/ok.jsp</result> -->
+ 			<!-- redirectAction类型　重定向-->
+ 			<result type="redirectAction">
+ 				<param name="actionName">product</param>
+ 				<param name="namespace">/product</param>
+ 			</result>
+ 			
+ 			
+ 		</action>
+ 		<action name="login2" class="com.wrf.struts.action.LoginAction2">
+ 			<result name="error">/error.jsp</result>
+ 			<!-- result name默认值success 　type默认值dispatcher -->
+ 			<!-- <result name="success" type="dispatcher">/ok.jsp</result> -->
+ 			<!-- 简化的result -->
+ 			<result>/ok.jsp</result>
+ 			<!-- 重定向 redirect-->
+ 			<result type="redirect">/index.jsp</result>
+ 		</action>
+ 		<action name="login3" class="com.wrf.struts.action.LoginAction3">
+ 			<result name="error">/error.jsp</result>
+ 			<result name="success">/ok.jsp</result>
+ 			<result name="input">/login.jsp</result>
+ 		</action>
+ 		<!-- clicksum -->
+ 		<action name="clicknum" class="com.wrf.struts.action.ClickNumAction">
+ 			<result name="error">/error.jsp</result>
+ 			<result name="success">/clickNum.jsp</result>
+ 		</action>
+ 		<!-- session验证 -->
+ 		<action name="login4" class="com.wrf.struts.action.LoginAction4">
+ 			<result name="error">/error.jsp</result>
+ 			<result name="success">/first.jsp</result>
+ 			<result name="input">/login.jsp</result>
+ 		</action>
+ 	</package>
+ 	
+ 	<package name="product"  extends="struts-default">
+ 	<!-- 动态方法调用1  product!edit.action -->
+ 	<!-- <action name="product" class="com.wrf.struts.action.ProductAction">
+ 		测试redirectAction
+ 		<result>/productList.jsp</result>
+	
+		<result name="edit">/edit.jsp</result>
+		<result name="del">/del.jsp</result>
+ 	</action>  -->
+ 	
+ 	
+ 	<!-- 动态方法调用2  根据method定义多个Action -->
+ 	<!-- <action name="editproduct" class="com.wrf.struts.action.ProductAction" method="edit">
+		 <result name="edit">/edit.jsp</result>
+ 	</action>
+ 	<action name="delproduct" class="com.wrf.struts.action.ProductAction" method="del">
+		 <result name="del">/del.jsp</result>
+ 	</action> -->
+ 	
+ 	<!-- 动态方法调用３　通配符 -->
+	 <action name="*product" class="com.wrf.struts.action.ProductAction" method="{1}">
+	 	<!-- 动态result -->
+		<result name="{1}">/{1}.jsp</result>
+		<!-- <result name="edit">/edit.jsp</result>
+		<result name="del">/del.jsp</result> -->
+	</action>  	
+ 	<!-- 动态方法调用４　通配符２ -->
+ 	<!-- <action name="*_*" class="com.wrf.struts.action.{1}Action" method="{2}">
+	 	<result name="edit">/edit.jsp</result>
+		<result name="del">/del.jsp</result>
+ 	</action> -->
+ 	
+ 		
+ 		
+ 	</package>
+ 	
+ 	
+ 	
+ 	
+ </struts>
+ 

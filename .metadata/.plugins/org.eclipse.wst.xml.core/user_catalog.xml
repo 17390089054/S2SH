@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <uri name="struts" uri="file:/home/knight/struts2_lib/struts-2.3.dtd"/>
+  <public publicId="struts-tags" uri="file:/home/knight/struts2_lib/struts-tags.tld"/>
+</catalog>

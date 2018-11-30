@@ -1,0 +1,45 @@
+package dao.impl;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
+
+import dao.ProductDao;
+import model.Product;
+@Repository
+public class UserDaoImpl extends HibernateDaoSupport   implements ProductDao   {
+
+    public List<Product> findAll() {
+        // TODO Auto-generated method stub
+        String sql="select * from user";
+        Query query=getSessionFactory().openSession().createSQLQuery(sql).addEntity(Product.class);
+        List<Product> list=query.list();
+        return list ;
+    }
+
+    public int insert(Product t) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    public int update(Product t, int id) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    public int delete(int id) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    public Product findById(int id) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    
+
+}

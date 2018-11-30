@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%> 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>多选框</title>
+</head>
+<body>
+	<s:form>
+	<!-- 使用简单集合对象生成多个复选框 -->
+	<s:checkboxlist name="cities" labelposition="top" label="请选择您喜欢的城市" 
+	list="{'北京','上海','杭州','青岛'}" />
+	<!-- 使用简单的map对象生成多个复选框 -->
+	<s:checkboxlist name="cities1" labelposition="top" label="请选择您最想去旅游的城市的月份" 
+	list="#{'北京':'8月','上海':'7月','杭州':'5月','青岛':'9月'}" listKey="key" listValue="value"/>
+	
+	
+	</s:form>
+</body>
+</html>

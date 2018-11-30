@@ -1,0 +1,6 @@
+127.0.0.1 - - [25/Nov/2018:22:44:46 +0800] "GET / HTTP/1.1" 404 1036
+0:0:0:0:0:0:0:1 - - [25/Nov/2018:22:44:51 +0800] "GET /spring_struts2/ HTTP/1.1" 200 1103
+0:0:0:0:0:0:0:1 - - [25/Nov/2018:22:45:43 +0800] "POST /spring_struts2/product_save.action;jsessionid=09A4E1E7CD873D7F2633B02963C416CB HTTP/1.1" 200 1156
+0:0:0:0:0:0:0:1 - - [25/Nov/2018:22:46:03 +0800] "GET /spring_struts2/ HTTP/1.1" 200 1059
+0:0:0:0:0:0:0:1 - - [25/Nov/2018:22:46:05 +0800] "POST /spring_struts2/product_save.action HTTP/1.1" 200 1252
+0:0:0:0:0:0:0:1 - - [25/Nov/2018:22:46:14 +0800] "POST /spring_struts2/product_save.action HTTP/1.1" 200 1449

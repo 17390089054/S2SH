@@ -1,0 +1,5 @@
+package com.wrf.ssh;
+
+public class User {
+
+}

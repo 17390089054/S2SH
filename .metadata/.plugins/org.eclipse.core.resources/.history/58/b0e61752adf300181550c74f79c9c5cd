@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>param标签示例</title>
+</head>
+<body>
+	<s:bean name="com.wrf.struts.action.Person" var="userInfo">
+		第一种写法<br/>
+		<s:param name="name"  value="张三"/>
+		姓名:<s:property value="name"/><br/>
+		第二种写法<br/>
+		<s:param name="sex">男</s:param>
+		性别:<s:property/><br/>
+		第三种写法<br/>
+		年龄:<s:param name="age" value="#userInfo.age">
+	</s:bean>
+</body>
+</html>

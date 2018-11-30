@@ -1,0 +1,21 @@
+package service.Impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import dao.ProductDao;
+import model.Product;
+import service.ProductService;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+    @Autowired
+    private ProductDao productDao;
+
+    @Override
+    public void saveProduct(Product product) {
+        productDao.saveProduct(product);
+    }
+
+}

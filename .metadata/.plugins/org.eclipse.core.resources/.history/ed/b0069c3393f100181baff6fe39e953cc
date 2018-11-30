@@ -1,0 +1,14 @@
+package com.wrf.struts.action;
+
+public class LoginAction {
+	private String username;
+	private String password;
+	private String getUserName() {
+		
+	}
+	
+	
+	public String execute() {
+		return "success";
+	}
+}

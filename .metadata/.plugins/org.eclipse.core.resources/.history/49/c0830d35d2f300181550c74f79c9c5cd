@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>optgroup标签示例</title>
+</head>
+<body>
+	<s:form>
+		<!-- 使用Map对象生成下拉选择框的选项组 -->
+		<s:select>
+		
+		</s:select>
+	</s:form>
+</body>
+</html>

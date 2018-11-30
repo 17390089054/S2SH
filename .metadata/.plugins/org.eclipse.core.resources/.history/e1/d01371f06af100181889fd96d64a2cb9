@@ -1,0 +1,15 @@
+package com.wrf.struts.action;
+
+public class UserAction {
+	private String userName;
+	private String address;
+	private String telephone;
+	private String userName;
+
+	
+	
+	
+	
+	
+	
+}

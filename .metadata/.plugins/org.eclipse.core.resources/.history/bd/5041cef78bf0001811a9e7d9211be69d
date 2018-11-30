@@ -1,0 +1,17 @@
+package com.wrf.ssh.controller;
+
+	@Controller  //注解为控制器
+	@RequestMapping(value="/login")    //截获带有/login的请求
+public class LoginController {
+    @RequestMapping(method=RequestMethod.GET)
+    public String get(){  //用来返回一个页面
+        return "login";  //返回指向login.jsp页面
+    }
+
+    @RequestMapping(method=RequestMethod.POST)
+    public String post(User user){  //用来处理用户的登陆请求
+        return "login_success";
+    }
+}
+
+}

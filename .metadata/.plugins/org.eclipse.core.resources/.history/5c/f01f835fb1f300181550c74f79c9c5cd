@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>url标签示例</title>
+</head>
+<body>
+	<h3 align="left">url标签使用范例</h3>
+	<h3 align="left">actio由value属性指定,不显示全路径URL</h3>
+	<p>
+		<s:url value="actionTag.action">
+			<s:param name="param" value="'frank'"/>
+		</s:url>
+	</p>
+</body>
+</html>

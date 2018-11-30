@@ -1,0 +1,12 @@
+INDEX VERSION 1.4+/home/knight/SSH/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3163330090.index
+3726822676.index
+2710436035.index
+3514242183.index
+2268351318.index
+2992326581.index
+1585330088.index
+3969339038.index
+204646988.index
+705180373.index
+2778215415.index

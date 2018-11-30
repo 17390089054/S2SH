@@ -1,0 +1,15 @@
+INDEX VERSION 1.131
+/home/knight/SSH/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3864088231.index
+/spring_struts2/src/main/java
+/home/knight/SSH/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4041814112.index
+/ssh_struts/src/main/resources
+/home/knight/SSH/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2891342640.index
+/ssh_struts/src/main/java
+/home/knight/SSH/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1157182300.index
+/SSH/src/main/resources
+/home/knight/SSH/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1876953756.index
+/SSH/src/main/java
+/home/knight/SSH/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3514242183.index
+/Struts2/src
+/home/knight/SSH/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3492594992.index
+/spring_struts2/src/main/resources

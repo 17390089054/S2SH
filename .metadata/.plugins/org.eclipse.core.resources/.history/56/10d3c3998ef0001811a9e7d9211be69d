@@ -1,0 +1,15 @@
+package com.wrf.ssh.serviceImpl;
+
+import org.springframework.stereotype.Service;
+
+import com.wrf.ssh.dao.UserDao;
+import com.wrf.ssh.service.LoginService;
+
+@Service
+public class LoginServiceImpl implements LoginService{
+    private UserDao userDao;
+	
+	public int login(String userName,String password){
+        return 1;
+    }
+}

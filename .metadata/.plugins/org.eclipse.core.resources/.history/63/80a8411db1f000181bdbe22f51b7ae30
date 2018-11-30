@@ -1,0 +1,8 @@
+package service;
+
+import common.BaseDao;
+import model.Product;
+
+public interface ProductService extends BaseDao<Product>{
+
+}
