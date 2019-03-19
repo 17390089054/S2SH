@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-2-23 8:13:15 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.qst.giftems.user.pojos.User" table="USER">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="userName" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="birthday" type="java.util.Date">
+            <column name="BIRTHDAY" />
+        </property>
+        <property name="nickName" type="java.lang.String">
+            <column name="NICKNAME" />
+        </property>
+        <property name="realName" type="java.lang.String">
+            <column name="REALNAME" />
+        </property>
+        <property name="mobile" type="java.lang.String">
+            <column name="MOBILE" />
+        </property>
+        <property name="qq" type="java.lang.String">
+            <column name="QQ" />
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="CITY" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="postcode" type="java.lang.String">
+            <column name="POSTCODE" />
+        </property>
+        <property name="headImg" type="java.lang.String">
+            <column name="HEADIMG" />
+        </property>
+        <property name="balance" type="java.lang.Float">
+            <column name="BALANCE" />
+        </property>
+        <property name="point" type="java.lang.Integer">
+            <column name="POINT" />
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATETIME" />
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="UPDATETIME" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="deleted" type="java.lang.Integer">
+            <column name="DELETED" />
+        </property>
+        <property name="ticket" type="java.lang.String">
+            <column name="TICKET" />
+        </property>
+        <property name="lastLoginTime" type="java.util.Date">
+            <column name="LASTLOGINTIME" />
+        </property>
+        <property name="lastLoginIp" type="java.lang.String">
+            <column name="LASTLOGINIP" />
+        </property>
+        <property name="mobileToken" type="java.lang.String">
+            <column name="MOBILETOKEN" />
+        </property>
+        <property name="work" type="java.lang.String">
+            <column name="WORK" />
+        </property>
+        <property name="bindStatus" type="java.lang.Integer">
+            <column name="BINDSTATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

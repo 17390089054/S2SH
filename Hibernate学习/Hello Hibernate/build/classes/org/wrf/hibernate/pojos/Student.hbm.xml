@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-2-23 9:00:35 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="org.wrf.hibernate.pojos.Student" table="STUDENT">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="name" type="java.lang.String" not-null="true">
+            <column name="NAME" />
+        </property>
+        <property name="score" type="int" not-null="true">
+            <column name="SCORE" />
+        </property>
+    </class>
+</hibernate-mapping>

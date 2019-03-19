@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+    	<!-- 配置访问Oracle数据库参数信息 -->
+		<property name="dialect">
+			org.hibernate.dialect.OracleDialect
+		</property>
+		<!-- 驱动包 -->
+		<property name="connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<!-- 连接路径 -->
+		<property name="connection.url">
+			jdbc:oracle:thin:@localhost:1521:orcl
+		</property>
+		<!-- 用户名 -->
+		<property name="connection.username">c##root</property>
+		<!-- 密码 -->
+		<property name="connection.password">123456</property>
+		<!-- 在控制台显示SQL语句 -->
+		<property name="show_sql">true</property>
+		<!-- 格式化SQL -->
+		<property name="format_sql">true</property>
+		<!-- 根据需要自动生成、更新数据表 -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- 调用getCurrentSession()需要在hibernate.cfg.xml文件中配置！ -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		<!-- 注册所有ORM映射文件 -->
+		<!-- 配置Order.hbm.xml的映射文件 -->
+		<mapping resource="org/wrf/hibernate/pojos/Order.hbm.xml"/>
+		<!-- 配置CUstomer.hbm.xml的映射文件 -->
+		<mapping resource="org/wrf/hibernate/pojos/Customer.hbm.xml"/>
+		<!-- 配置IdCard.hbm.xml的映射文件 -->
+		 <mapping resource="org/wrf/hibernate/pojos/IdCard.hbm.xml"/>
+		<!-- 配置Product.hbm.xml的映射文件 -->
+		<mapping resource="org/wrf/hibernate/pojos/Product.hbm.xml"/>
+		<!-- 配置OrderItem.hbm.xml的映射文件 -->
+		<mapping resource="org/wrf/hibernate/pojos/OrderItem.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

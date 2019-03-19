@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.wrf.hibernate.pojos">
+	<class name="OrderItem" table="ORDERITEM">
+		<id name="id" column="ID">
+			<generator class="native" />
+		</id>
+		<!--OrderItem与Order是1-N关系 -->
+		<many-to-one name="order" class="Order" column="ORDER_ID" />
+		<!--OrderItem与Product是1-N关系 -->
+		<many-to-one name="product" class="Product" column="PRODUCT_ID" />
+		<!--购买商品数量 -->
+		<property name="quantity" column="QUANTITY" type="integer" />
+		<!--商品购买时的价格 -->
+		<property name="purchasePrice" column="PURCHASEPRICE" type="double" />
+
+	</class>
+</hibernate-mapping>

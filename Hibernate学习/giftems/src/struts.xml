@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 默认包结构 -->
+	<package name="qrsx-default" namespace="/" extends="struts-default"
+		abstract="true">
+		<!-- 全局结果转发 -->
+		<global-results>
+			<result name="index">/jsp/index.jsp</result>
+			<result name="error">/comm/error.jsp</result>
+			<result name="login">/jsp/login/login.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception" />
+		</global-exception-mappings>
+	</package>
+	<!-- 用户中心-->
+	<package name="user" extends="qrsx-default" namespace="/user">
+		<!-- 登录Action -->
+		<action name="l" class="com.qst.giftems.login.LoginAction">
+			<!-- 用户登录成功后跳转 -->
+			<result name="main">/jsp/main.jsp</result>
+			<!-- 用户登录界面 -->
+			<result name="toLogin">/jsp/login/login.jsp</result>
+			<!-- 用户注册界面 -->
+			<result name="toRegister">/jsp/login/register.jsp</result>
+			<!-- 用户注册成功跳转 -->
+			<result name="regSuccess">/jsp/login/register_suc.jsp</result>
+		</action>
+	</package>
+	<!-- 礼品中心 -->
+	<package name="gift" extends="qrsx-default" namespace="/">
+		<action name="g" class="com.qst.giftems.gift.action.GiftAction">
+			<!-- 礼品分类首页 -->
+			<result name="giftList">/jsp/gift/giftList.jsp</result>
+			<result name="info">/jsp/gift/giftInfo.jsp</result>
+		</action>
+	</package>
+</struts>

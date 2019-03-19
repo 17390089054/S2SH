@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 配置访问Oracle数据库参数信息 -->
+		<property name="dialect">
+			org.hibernate.dialect.MySQL5Dialect
+		</property>
+		<property name="connection.driver_class">
+			org.gjt.mm.mysql.Driver
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://localhost:3306/gift_ems?useUnicode=true&amp;characterEncoding=UTF-8
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">123456</property>
+		<property name="max_fetch_depth">3</property>
+		<!-- 在控制台显示SQL语句 -->
+		<property name="show_sql">true</property>
+		<!--根据需要自动生成、更新数据表 -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- 注册所有ORM映射文件 -->
+		<mapping resource="com/qst/giftems/user/pojos/User.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

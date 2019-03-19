@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.wrf.hibernate.pojos">
+	<class name="Order" table="ORDERS">
+		<id name="id" column="ID">
+			<generator class="uuid.hex" />
+		</id>
+		<!-- 订单编号 -->
+		<property name="orderNo" column="ORDERNO" type="string" />
+		<!-- 下单日期：yyyy-MM-dd HH:MM:SS -->
+		<property name="date" column="ORDERDATE" type="timestamp" />
+		<!-- 单向关联N-1 -->
+		<many-to-one name="customer" column="CUSTOMER_ID" class="Customer" />
+		<!-- <set name="orderitems" cascade="save-update"  inverse="true" table="ORDERITEM">
+			<key column="ORDER_ID" />
+			<one-to-many class="OrderItem" />
+		</set> -->
+
+	</class>
+</hibernate-mapping>
+

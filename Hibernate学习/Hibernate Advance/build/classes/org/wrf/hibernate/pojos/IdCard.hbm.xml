@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.wrf.hibernate.pojos">
+	<class name="IdCard" table="IDCARD">
+		<id name="id" column="ID">
+			<!-- 主键生成策略为 uuid -->
+			<!-- <generator class="uuid.hex" /> -->
+			<!-- 主键由关联实体生成 -->
+			<!-- <generator class="foreign">
+				<param name="property">customer</param>
+			</generator> -->
+		</id>
+		<!-- 身份证编号 -->
+		<property name="cardNo" column="CARDNO" type="string" />
+		<!-- 1-1关联 -->
+		<one-to-one name="customer" class="Customer" constrained="true" />
+	</class>
+</hibernate-mapping>
