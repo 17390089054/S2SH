@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	 					http://www.springframework.org/schema/aop 
+	 					http://www.springframework.org/schema/aop/spring-aop-4.1.xsd 
+	 					http://www.springframework.org/schema/tx
+	 					http://www.springframework.org/schema/tx/spring-tx.xsd
+	 					http://www.springframework.org/schema/context
+	 					http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	 					">
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/bank"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="admin"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/netbank/entity/Admin.hbm.xml</value>
+				<value>
+					com/netbank/entity/TransactionType.hbm.xml
+				</value>
+				<value>com/netbank/entity/Account.hbm.xml</value>
+				<value>com/netbank/entity/TransactionLog.hbm.xml</value>
+				<value>com/netbank/entity/Status.hbm.xml</value>
+				<value>com/netbank/entity/Personinfo.hbm.xml</value></list>
+		</property></bean>
+	<!-- 声明事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- 基于@Transactional注解方式管理 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />	
+
+
+	<!-- 定义事务通知 -->
+	<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED"/>		
+		</tx:attributes>
+	</tx:advice> -->
+	
+	<!-- 定义切面，并将事务通知和切面组合(定义哪些方法应用事务规则) -->
+	<!-- <aop:config>
+		对com.bank.biz包下的所有类的所有方法都应用事务规则
+		<aop:pointcut expression="execution(* com.netbank.biz.*.*(..))" id="bizMethods"/>
+		将事务通知与切面组合
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="bizMethods"/>
+	</aop:config> -->
+	
+	<!-- 开启注解处理器 -->
+	<context:annotation-config/>
+	
+	
+	<!-- 定义UserDaoImpl，并给类中的sessionFactory属性注入实例 -->
+	<bean id="userDao" class="com.netbank.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 定义UserBizImpl，并给类中的userDao属性注入实例 -->
+	<bean id="userBiz" class="com.netbank.biz.impl.UserBizImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<!-- 为UserAction指定别名 -->
+	<bean name="user" class="com.netbank.action.UserAction" scope="prototype"/>
+	
+	<!-- 定义PersoninfoDaoImpl,并给类中的sessionFactory属性注入值 -->
+	<bean id="personinfoDao" class="com.netbank.dao.impl.PersoninfoDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 定义PersoninfoBizImpl,并给类中的PersoninfoDao属性和UserDao属性注入值 -->
+	<bean id="personinfoBiz" class="com.netbank.biz.impl.PersoninfoBizImpl" >
+		<property name="personinfoDao" ref="personinfoDao"></property>
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<!-- 使用原型模式定义PersoninfoAction类PersoninfoAction的属性通过Annotation注入 -->
+	<bean name="personinfo" class="com.netbank.action.PersoninfoAction" scope="prototype"/>
+
+	<!--定义TransactionDaoImpl,并给类中的sessionFactory属性注入值 -->
+	<bean id="transactionDao" class="com.netbank.dao.impl.TransactionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 定义TransactionBizImpl,并给其属性transactionDao和userDao属性注入值 -->
+	<bean id="transactionBiz" class="com.netbank.biz.impl.TransactionBizImpl">
+		<property name="transactionDao" ref="transactionDao"></property>
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<!-- 使用原型模式定义Transaction类，并给属性userBiz和transactionBiz注入值 -->
+	<bean name="transaction" class="com.netbank.action.TransactionAction" scope="prototype">
+		<property name="userBiz" ref="userBiz"></property>
+		<property name="transactionBiz" ref="transactionBiz"></property>
+	</bean>
+	
+	<!-- 使用原型模式定义AdminAction类，并给属性userBiz和personinfoBiz注入值 通过Annotation注解方式注入 -->
+	<bean name="admin" class="com.netbank.action.AdminAction" scope="prototype"/>
+	
+	
+	</beans>
